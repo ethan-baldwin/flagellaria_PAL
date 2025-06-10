@@ -3,8 +3,8 @@
 #SBATCH --partition=batch
 #SBATCH --mail-type=END,FAIL
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=4gb
+#SBATCH --cpus-per-task=24
+#SBATCH --mem=24gb
 #SBATCH --time=100:00:00 
 #SBATCH --output=/scratch/eab77806/logs/%x_%j.out
 #SBATCH --error=/scratch/eab77806/logs/%x_%j.err
@@ -17,4 +17,6 @@ then
 fi
 cd $OUTDIR
 
-bzcat LBUP.cleaned.fastq.bz2 | gzip -c > LBUP.cleaned.fastq.gz
+ml pigz
+
+bzcat LBUP.cleaned.fastq.bz2 | pigz -c > LBUP.cleaned.fastq.gz
