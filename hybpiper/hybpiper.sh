@@ -19,4 +19,4 @@ cd $OUTDIR
 
 ml Hybpiper/2.1.6-foss-2022b
 
-hybpiper assemble -t_aa ../target/Flagellaria_indica_PALs.faa -r ../reads/LBUP.cleaned.fastq.gz --bwa --prefix bwa  
+hybpiper assemble -t_aa ../target/Flagellaria_indica_PALs.faa -r ../reads/LBUP.cleaned.fastq.gz 
